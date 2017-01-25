@@ -1,0 +1,25 @@
+name       : arp-scan
+version    : 1.9
+release    : 1
+source     :
+    - https://github.com/royhills/arp-scan/releases/download/1.9/arp-scan-1.9.tar.gz : ce908ac71c48e85dddf6dd4fe5151d13c7528b1f49717a98b2a2535bd797d892
+license    : GPL-3.0
+component  : system.util
+summary    : ARP scanner for local networks
+description: |
+    A tool that uses ARP to discover and fingerprint IP hosts on the local network
+builddeps  :
+    - libpcap-devel
+rundeps    :
+    - libpcap
+    - libwww-perl
+setup      : |
+    autoreconf --install
+    %configure  --prefix=/usr \
+                --mandir=/usr/share/man
+build      : |
+    %make
+check      : |
+    %make check
+install    : |
+    %make_install
