@@ -1,0 +1,19 @@
+name       : irqbalance
+version    : 1.2.0
+release    : 1
+source     :
+    - https://github.com/Irqbalance/irqbalance/archive/v1.2.0.tar.gz : 0efe5d2a0947b54d89c7196a48eca9b3b33c80bc15964e4226a0f7d3fd9535b2
+license    : GPL-2.0
+component  : system.utils
+summary    : IRQ balancing daemon for SMP systems
+description: |
+    IRQ balancing daemon for SMP systems
+setup      : |
+    ./autogen.sh
+    %configure --prefix=/usr --sbindir=/usr/bin
+build      : |
+    %make
+install    : |
+    %make_install
+    install -Dm644 $pkgfiles/irqbalance.service \
+    $installdir/usr/lib/systemd/system/irqbalance.service
