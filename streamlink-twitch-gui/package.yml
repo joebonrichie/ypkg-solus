@@ -1,0 +1,34 @@
+name       : streamlink-twitch-gui
+version    : 1.1.1
+release    : 1
+source     :
+    - git|https://github.com/streamlink/streamlink-twitch-gui.git : e5f98d3c4ffbad8cc75bf8ddfed67affd1b1aa5b
+license    : MIT
+component  : network.web
+summary    : A multi platform Twitch.tv browser for Streamlink
+description: |
+    A multi platform Twitch.tv browser for Streamlink
+networking : yes
+builddeps  :
+    - pkgconfig(x11)
+    - pkgconfig(gtk+-2.0)
+    - pkgconfig(gconf-2.0)
+    - nodejs
+    - git
+    #- xdg-utils
+    #- libxtst
+    #- libnss
+build      : |
+    # Since grunt-cli and bower will not be installed globally (-g) export them to path
+    export PATH=$workdir/node_modules/.bin:$PATH
+    npm install grunt-cli bower
+    npm install
+    # Normally bower install gets triggered by npm install but we need to pass --allow-root to it
+    bower install --allow-root
+    grunt release
+    # nwjs cannot be run, exit code 1, helpful.
+install    : |
+    # cp -R $workdir/build/releases $installdir/opt/
+    # add-menu-item.sh
+    # disable update checking
+    %make_install
