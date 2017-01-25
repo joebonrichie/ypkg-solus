@@ -1,0 +1,322 @@
+From 0c752b0af1ff4a989f8922a2659cea637f7128ce Mon Sep 17 00:00:00 2001
+From: Joseph Riches <josephriches@gmail.com>
+Date: Mon, 23 Jan 2017 17:28:29 +0000
+Subject: [PATCH 1/1] package-chatty
+
+---
+ files/chatty.desktop              |   9 ++++
+ files/chatty.png                  | Bin 0 -> 3770 bytes
+ files/disable_version_check.patch |  87 ++++++++++++++++++++++++++++++++++++++
+ files/user_config_dir.patch       |  22 ++++++++++
+ package.yml                       |  31 ++++++++++++++
+ pspec_x86_64.xml                  |  37 ++++++++++++++++
+ 6 files changed, 186 insertions(+)
+ create mode 100644 files/chatty.desktop
+ create mode 100644 files/chatty.png
+ create mode 100644 files/disable_version_check.patch
+ create mode 100644 files/user_config_dir.patch
+ create mode 100644 package.yml
+ create mode 100644 pspec_x86_64.xml
+
+diff --git a/files/chatty.desktop b/files/chatty.desktop
+new file mode 100644
+index 0000000..53d5c3f
+--- /dev/null
++++ b/files/chatty.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Version=1.0
++Name=Chatty
++Exec=/usr/bin/chatty
++Icon=chatty
++Terminal=false
++Type=Application
++Categories=Application;Network;
++Keywords=twitch;chat;
+diff --git a/files/chatty.png b/files/chatty.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..91b8bb43740d56ebb3d4ae190687681801d0bd38
+GIT binary patch
+literal 3770
+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
+
+literal 0
+HcmV?d00001
+
+diff --git a/files/disable_version_check.patch b/files/disable_version_check.patch
+new file mode 100644
+index 0000000..6eb142c
+--- /dev/null
++++ b/files/disable_version_check.patch
+@@ -0,0 +1,87 @@
++# disable version check. updates come via package management
++Index: chatty-0.8.2/src/chatty/Chatty.java
++===================================================================
++--- chatty-0.8.2.orig/src/chatty/Chatty.java	2016-04-26 22:46:41.680640379 +0200
+++++ chatty-0.8.2/src/chatty/Chatty.java	2016-04-26 22:50:03.208841787 +0200
++@@ -58,7 +58,7 @@
++      * Enable Version Checker (if you compile and distribute this yourself, you
++      * may want to disable this)
++      */
++-    public static final boolean VERSION_CHECK_ENABLED = true;
+++    public static final boolean VERSION_CHECK_ENABLED = false;
++     
++     /**
++      * The regular URL of the textfile where the most recent version is stored.
++Index: chatty-0.8.2/src/chatty/TwitchClient.java
++===================================================================
++--- chatty-0.8.2.orig/src/chatty/TwitchClient.java	2016-04-26 22:47:26.953580371 +0200
+++++ chatty-0.8.2/src/chatty/TwitchClient.java	2016-04-26 22:51:15.054348837 +0200
++@@ -298,7 +298,7 @@
++         checkForVersionChange();
++         // Check version, if enabled in this build
++         if (Chatty.VERSION_CHECK_ENABLED) {
++-            checkNewVersion();
+++            //checkNewVersion();
++         }
++         
++         // Connect or open connect dialog
++@@ -368,44 +368,7 @@
++      * Checks for a new version if the last check was long enough ago.
++      */
++     private void checkNewVersion() {
++-        if (!settings.getBoolean("checkNewVersion")) {
++-            return;
++-        }
++-        /**
++-         * Check if enough time has passed since the last check.
++-         */
++-        long ago = System.currentTimeMillis() - settings.getLong("versionLastChecked");
++-        if (ago/1000 < CHECK_VERSION_INTERVAL) {
++-            /**
++-             * If not checking, check if update was detected last time.
++-             */
++-            String updateAvailable = settings.getString("updateAvailable");
++-            if (!updateAvailable.isEmpty()) {
++-                g.setUpdateAvailable(updateAvailable);
++-            }
++-            return;
++-        }
++-        settings.setLong("versionLastChecked", System.currentTimeMillis());
++-        g.printSystem("Checking for new version..");
++-        
++-        new Version(new VersionListener() {
++ 
++-            @Override
++-            public void versionChecked(String version, String info, boolean isNewVersion) {
++-                if (isNewVersion) {
++-                    String infoText = "";
++-                    if (!info.isEmpty()) {
++-                        infoText = "[" + info + "] ";
++-                    }
++-                    g.printSystem("New version available: "+version+" "+infoText
++-                            +"(Go to <Help-Website> to download)");
++-                    g.setUpdateAvailable(version);
++-                    settings.setString("updateAvailable", version);
++-                } else {
++-                    g.printSystem("You already have the newest version.");
++-                }
++-            }
++-        });
++     }
++     
++     /**
++Index: chatty-0.8.2/src/chatty/Version.java
++===================================================================
++--- chatty-0.8.2.orig/src/chatty/Version.java	2016-04-26 22:47:26.953580371 +0200
+++++ chatty-0.8.2/src/chatty/Version.java	2016-04-26 22:51:48.071042729 +0200
++@@ -32,8 +32,8 @@
++     }
++     
++     private void checkForNewVersion() {
++-        LOGGER.info("Checking for new version..");
++-        new Thread(new VersionChecker()).start();
+++        //LOGGER.info("Checking for new version..");
+++        //new Thread(new VersionChecker()).start();
++     }
++     
++     /**
+diff --git a/files/user_config_dir.patch b/files/user_config_dir.patch
+new file mode 100644
+index 0000000..6a29db3
+--- /dev/null
++++ b/files/user_config_dir.patch
+@@ -0,0 +1,22 @@
++# change config directory to $HOME/.config/chatty
++Index: chatty-0.8.2/src/chatty/Chatty.java
++===================================================================
++--- chatty-0.8.2.orig/src/chatty/Chatty.java	2016-04-26 22:43:29.316678569 +0200
+++++ chatty-0.8.2/src/chatty/Chatty.java	2016-04-26 22:44:05.245414029 +0200
++@@ -186,12 +186,11 @@
++      * @return
++      */
++     public static String getUserDataDirectory() {
++-        if (useCurrentDirectory) {
++-            return System.getProperty("user.dir") + File.separator;
++-        }
++         String dir = System.getProperty("user.home")
++-                + File.separator 
++-                + ".chatty" 
+++                + File.separator
+++                + ".config"
+++                + File.separator
+++                + "chatty"
++                 + File.separator;
++         new File(dir).mkdirs();
++         return dir;
+diff --git a/package.yml b/package.yml
+new file mode 100644
+index 0000000..7c88eeb
+--- /dev/null
++++ b/package.yml
+@@ -0,0 +1,31 @@
++name       : chatty
++version    : 0.8.4.1
++release    : 1
++source     :
++    - https://github.com/chatty/chatty/archive/v0.8.4.1.tar.gz : 68f00f3c7384b08041a63030a0738925348185ea5d1ff8a704d56977f8e04b18
++license    : APACHE-2.0
++component  : network.irc
++summary    : Twitch Chat Client
++networking : yes
++description: |
++    Twitch Chat Client written in Java
++builddeps  :
++    - gradle
++    - unzip
++rundeps    :
++    - openjdk-8
++setup      : |
++    %patch -p1 < $pkgfiles/disable_version_check.patch
++    %patch -p1 < $pkgfiles/user_config_dir.patch
++build      : |
++    export GRADLE_USER_HOME=/home/build/YPKG/root/chatty/
++    gradle --no-daemon release
++install    : |
++    mkdir -p $installdir/usr/share/chatty
++    unzip $workdir/build/releases/Chatty_$version.zip -d $installdir/usr/share/chatty/
++
++    install -Dm755 $pkgfiles/chatty_script  $installdir/usr/bin/chatty
++
++    install -Dm644 $pkgfiles/chatty.png $installdir/usr/share/pixmaps/chatty.png
++    install -Dm755 $pkgfiles/chatty.desktop $installdir/usr/share/applications/chatty.desktop
++
+diff --git a/pspec_x86_64.xml b/pspec_x86_64.xml
+new file mode 100644
+index 0000000..0d66ae8
+--- /dev/null
++++ b/pspec_x86_64.xml
+@@ -0,0 +1,37 @@
++<PISI>
++    <Source>
++        <Name>chatty</Name>
++        <Packager>
++            <Name>Joseph Riches</Name>
++            <Email>josephriches@gmail.com</Email>
++        </Packager>
++        <License>APACHE-2.0</License>
++        <PartOf>network.irc</PartOf>
++        <Summary xml:lang="en">Twitch Chat Client</Summary>
++        <Description xml:lang="en">Twitch Chat Client written in Java
++</Description>
++        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
++    </Source>
++    <Package>
++        <Name>chatty</Name>
++        <Summary xml:lang="en">Twitch Chat Client</Summary>
++        <Description xml:lang="en">Twitch Chat Client written in Java
++</Description>
++        <PartOf>network.irc</PartOf>
++        <Files>
++            <Path fileType="executable">/usr/bin</Path>
++            <Path fileType="data">/usr/share/applications/chatty.desktop</Path>
++            <Path fileType="data">/usr/share/chatty</Path>
++            <Path fileType="data">/usr/share/pixmaps/chatty.png</Path>
++        </Files>
++    </Package>
++    <History>
++        <Update release="1">
++            <Date>2017-01-23</Date>
++            <Version>0.8.4.1</Version>
++            <Comment>Initial package upload</Comment>
++            <Name>Joseph Riches</Name>
++            <Email>josephriches@gmail.com</Email>
++        </Update>
++    </History>
++</PISI>
+\ No newline at end of file
+-- 
+2.11.0
+
