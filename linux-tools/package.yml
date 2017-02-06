@@ -1,0 +1,56 @@
+name       : linux-tools
+version    : 4.9.7
+release    : 5
+source     :
+    - https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.9.7.tar.xz : 0b61283b71c7397cb6b5ac3497845d3cdf8137ecd16ab39c8ac6cf5bb90e33dc
+license    :
+    - GPL-2.0
+component  :
+    - programming.tools
+    - cpupower: programming.library
+    - cpupower-devel: programming.devel
+    - x86_energy_perf_policy: programming.library
+summary    :
+    - Useful kernel development tools such as perf
+    - cpupower: The cpupower program
+    - cpupower-devel: Development files for linux-tools-cpupower
+    - x86_energy_perf_policy: Allows programs and admins to define the relative importance of performance and energy efficiency.
+libsplit   : no
+description: |
+    Useful kernel development tools such as 'perf'
+patterns   :
+    - cpupower:
+        - /usr/bin/cpu*
+        - /usr/sbin/cpu*
+        - /usr/lib64/libcpu*.so.*
+        - /usr/share/locale
+        - /usr/share/man/man1/cpu*
+    - cpupower-devel:
+        - /usr/include/cpu*.h
+        - /usr/lib64/libcpu*.so
+    - x86_energy_perf_policy:
+        - /usr/bin/x86_energy_perf_policy*
+        - /usr/share/man/man8/x86*
+replaces   :
+    - kernel-tools
+builddeps  :
+    - pkgconfig(devmapper)
+    - pkgconfig(gtk+-2.0)
+    - pkgconfig(libpci)
+    - pkgconfig(libunwind)
+    - pkgconfig(slang)
+    - elfutils-devel
+    - libelf-devel
+    - perl
+build      : |
+    %make -C tools/perf WERROR=0 prefix=/usr
+    %make -C tools/power/cpupower prefix=/usr
+    %make -C tools/power/x86/x86_energy_perf_policy prefix=/usr
+install    : |
+    %make_install -C tools/perf WERROR=0 prefix=/usr
+    %make_install -C tools/power/cpupower prefix=/usr mandir=/usr/share/man docdir=/usr/share/doc/${package} libdir=%libdir%
+    install -D -m 00644 $installdir/etc/bash_completion.d/perf $installdir/usr/share/bash-completion/completions/perf
+    rm -rf $installdir/etc
+    mkdir -p $installdir/usr/share/man/man8/
+    %make_install -C tools/power/x86/x86_energy_perf_policy prefix=/usr man8dir=/usr/share/man
+
