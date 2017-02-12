@@ -1,0 +1,19 @@
+name       : yubico-pam
+version    : 2.24
+release    : 1
+source     :
+    - https://github.com/Yubico/yubico-pam/archive/2.24.tar.gz : 4e21056f35eee0795918ea394173ab8d4f52629498baf38e86ece5b7a8306d55
+license    : BSD-2-Clause
+component  : system.util
+summary    : Yubico Pluggable Authentication Module (PAM)
+description: |
+    The Yubico PAM module provides an easy way to integrate the Yubikey into your existing user authentication infrastructure. 
+    PAM is used by GNU/Linux, Solaris and Mac OS X for user authentication, and by other specialized applications such as NCSA MyProxy.
+builddeps  :
+    - libykclient
+setup      : |
+    %reconfigure
+build      : |
+    %make
+install    : |
+    %make_install
