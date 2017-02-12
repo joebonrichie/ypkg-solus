@@ -1,0 +1,20 @@
+name       : tftp-hpa
+version    : 5.2
+release    : 1
+source     :
+    - https://www.kernel.org/pub/software/network/tftp/tftp-hpa/tftp-hpa-5.2.tar.xz : afee361df96a2f88344e191f6a25480fd714e1d28d176c3f10cc43fa206b718b
+license    : GPL-2.0
+component  : system.utils
+summary    : TFTP Client and server
+description: |
+    TFTP Client and server
+builddeps  :
+    - readline
+setup      : |
+    %configure --prefix=/usr --mandir=/usr/share/man --sbindir=/usr/bin --without-tcpwrappers
+build      : |
+    %make
+install    : |
+    %make INSTALLROOT=$installdir install
+    install -Dm664 $pkgfiles/tftpd.service $installdir/usr/bin/systemd/system/tftpd.service
+    install -Dm664 $pkgfiles/tftpd.socket $installdir/usr/bin/systemd/system/tftpd.socket
