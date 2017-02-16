@@ -2,19 +2,19 @@
     <Source>
         <Name>arp-scan</Name>
         <Packager>
-            <Name>Joseph Riches</Name>
+            <Name>Joey Riches</Name>
             <Email>josephriches@gmail.com</Email>
         </Packager>
         <License>GPL-3.0</License>
         <PartOf>system.util</PartOf>
-        <Summary xml:lang="en">ARP Scanner for local networks</Summary>
+        <Summary xml:lang="en">ARP scanner for local networks</Summary>
         <Description xml:lang="en">A tool that uses ARP to discover and fingerprint IP hosts on the local network
 </Description>
         <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
     </Source>
     <Package>
         <Name>arp-scan</Name>
-        <Summary xml:lang="en">ARP Scanner for local networks</Summary>
+        <Summary xml:lang="en">ARP scanner for local networks</Summary>
         <Description xml:lang="en">A tool that uses ARP to discover and fingerprint IP hosts on the local network
 </Description>
         <PartOf>system.util</PartOf>
@@ -26,10 +26,10 @@
     </Package>
     <History>
         <Update release="1">
-            <Date>2017-01-22</Date>
+            <Date>2017-02-06</Date>
             <Version>1.9</Version>
-            <Comment>Initial package upload</Comment>
-            <Name>Joseph Riches</Name>
+            <Comment>Packaging update</Comment>
+            <Name>Joey Riches</Name>
             <Email>josephriches@gmail.com</Email>
         </Update>
     </History>
