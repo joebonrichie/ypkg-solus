@@ -169,6 +169,16 @@
         </Files>
     </Package>
     <Package>
+        <Name>linux-tools-turbostat</Name>
+        <Summary xml:lang="en">Useful kernel development tools such as perf</Summary>
+        <Description xml:lang="en">Useful kernel development tools such as &apos;perf&apos;
+</Description>
+        <Files>
+            <Path fileType="executable">/usr/bin/turbostat</Path>
+            <Path fileType="man">/usr/share/man/man8/turbostat*</Path>
+        </Files>
+    </Package>
+    <Package>
         <Name>linux-tools-x86_energy_perf_policy</Name>
         <Summary xml:lang="en">Allows programs and admins to define the relative importance of performance and energy efficiency.</Summary>
         <Description xml:lang="en">Useful kernel development tools such as &apos;perf&apos;
@@ -181,7 +191,7 @@
     </Package>
     <History>
         <Update release="5">
-            <Date>2017-02-06</Date>
+            <Date>2017-02-26</Date>
             <Version>4.9.7</Version>
             <Comment>Packaging update</Comment>
             <Name>Joey Riches</Name>

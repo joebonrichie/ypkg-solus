@@ -31,6 +31,9 @@ patterns   :
     - x86_energy_perf_policy:
         - /usr/bin/x86_energy_perf_policy*
         - /usr/share/man/man8/x86*
+    - turbostat:
+        - /usr/bin/turbostat
+        - /usr/share/man/man8/turbostat*
 replaces   :
     - kernel-tools
 builddeps  :
@@ -46,6 +49,7 @@ build      : |
     %make -C tools/perf WERROR=0 prefix=/usr
     %make -C tools/power/cpupower prefix=/usr
     %make -C tools/power/x86/x86_energy_perf_policy prefix=/usr
+    %make -C tools/power/x86/turbostat prefix=/usr
 install    : |
     %make_install -C tools/perf WERROR=0 prefix=/usr
     %make_install -C tools/power/cpupower prefix=/usr mandir=/usr/share/man docdir=/usr/share/doc/${package} libdir=%libdir%
@@ -53,4 +57,5 @@ install    : |
     rm -rf $installdir/etc
     mkdir -p $installdir/usr/share/man/man8/
     %make_install -C tools/power/x86/x86_energy_perf_policy prefix=/usr man8dir=/usr/share/man
+    %make_install -C tools/power/x86/turbostat prefix=/usr man8dir=/usr/share/man
 
