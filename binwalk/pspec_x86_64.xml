@@ -1,0 +1,134 @@
+<PISI>
+    <Source>
+        <Name>binwalk</Name>
+        <Packager>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Packager>
+        <License>MIT</License>
+        <PartOf>system.util</PartOf>
+        <Summary xml:lang="en">Firmware Analysis Tool</Summary>
+        <Description xml:lang="en">Binwalk is a fast, easy to use tool for analyzing, reverse engineering, and extracting firmware images
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>binwalk</Name>
+        <Summary xml:lang="en">Firmware Analysis Tool</Summary>
+        <Description xml:lang="en">Binwalk is a fast, easy to use tool for analyzing, reverse engineering, and extracting firmware images
+</Description>
+        <PartOf>system.util</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk-2.1.1-py3.5.egg-info</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/__pycache__/__init__.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/config/extract.conf</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/C.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/__pycache__/C.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/__pycache__/__init__.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/__pycache__/common.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/__pycache__/compat.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/__pycache__/display.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/__pycache__/idb.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/__pycache__/magic.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/__pycache__/module.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/__pycache__/plugin.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/__pycache__/settings.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/__pycache__/statuserver.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/common.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/compat.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/display.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/idb.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/magic.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/module.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/plugin.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/settings.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/core/statuserver.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/archives</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/binarch</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/bincast</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/binwalk</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/bootloaders</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/code</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/compressed</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/console</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/crypto</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/ecos</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/encoding</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/executables</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/filesystems</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/firmware</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/hashing</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/images</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/linux</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/lzma</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/misc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/network</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/sql</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/magic/vxworks</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/__pycache__/__init__.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/__pycache__/binvis.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/__pycache__/compression.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/__pycache__/disasm.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/__pycache__/entropy.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/__pycache__/extractor.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/__pycache__/general.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/__pycache__/hashmatch.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/__pycache__/heuristics.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/__pycache__/hexdiff.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/__pycache__/signature.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/binvis.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/compression.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/disasm.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/entropy.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/extractor.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/general.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/hashmatch.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/heuristics.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/hexdiff.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/modules/signature.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/__pycache__/arcadyan.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/__pycache__/compressd.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/__pycache__/cpio.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/__pycache__/gzipextract.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/__pycache__/gzipvalid.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/__pycache__/jffs2valid.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/__pycache__/lzmaextract.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/__pycache__/lzmamod.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/__pycache__/lzmavalid.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/__pycache__/tar.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/__pycache__/ubivalid.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/__pycache__/unjffs2.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/__pycache__/ziphelper.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/__pycache__/zlibextract.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/__pycache__/zlibvalid.cpython-35.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/arcadyan.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/compressd.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/cpio.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/gzipextract.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/gzipvalid.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/jffs2valid.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/lzmaextract.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/lzmamod.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/lzmavalid.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/tar.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/ubivalid.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/unjffs2.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/ziphelper.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/zlibextract.py</Path>
+            <Path fileType="library">/usr/lib/python3.5/site-packages/binwalk/plugins/zlibvalid.py</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2017-03-03</Date>
+            <Version>2.1.1</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

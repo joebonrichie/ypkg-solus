@@ -1,0 +1,14 @@
+name       : binwalk
+version    : 2.1.1
+release    : 1
+source     :
+    - https://github.com/devttys0/binwalk/archive/v2.1.1.tar.gz : 1b70a5b03489d29f60fef18008a2164974234874faab48a4f47ec53d461d284a
+license    : MIT
+component  : system.util
+summary    : Firmware Analysis Tool
+description: |
+    Binwalk is a fast, easy to use tool for analyzing, reverse engineering, and extracting firmware images
+build      : |
+    %python3_setup
+install    : |
+    %python3_install
