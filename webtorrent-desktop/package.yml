@@ -10,7 +10,7 @@ summary    : Cross platform streaming torrent app
 description: |
     Cross platform streaming torrent app
 builddeps  : 
-    - nodejs-devel
+    - nodejs
 setup      : |
     %patch -p1 < $pkgfiles/0001-only-build-x64-linux.patch
 build      : |
@@ -20,9 +20,9 @@ install    : |
     install -dm755 $installdir/usr/share
     install -dm755 $installdir/usr/bin
 
-    cp -a $workdir/electron-packager/linux-x64/WebTorrent-linux-x64 $installdir/usr/share/$name
-    ln -s $installdir/usr/share/$name/WebTorrent $installdir/usr/bin/$name
+    cp -a $workdir/electron-packager/linux-x64/WebTorrent-linux-x64 $installdir/usr/share/webtorrent-desktop
+    ln -s $installdir/usr/share/webtorrent-desktop/WebTorrent $installdir/usr/bin/webtorrent-desktop
 
-    install -Dm644 $workdir/$name.desktop $installdir/usr/share/applications/$name.desktop
-    install -Dm644 $workdir/$name-$version/static/WebTorrent.png $installdir/usr/share/icons/hicolor/256x256/apps/$name.png
+    install -Dm644 $workdir/static/linux/webtorrent-desktop.desktop $installdir/usr/share/applications/webtorrent-desktop.desktop
+    install -Dm644 $workdir/static/WebTorrent.png $installdir/usr/share/icons/hicolor/256x256/apps/webtorrent-desktop.png
 
