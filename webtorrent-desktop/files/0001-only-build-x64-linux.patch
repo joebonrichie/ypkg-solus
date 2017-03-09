@@ -1,0 +1,25 @@
+From c6337130815d05c8dc7e534fd10a0ed94f2dbc27 Mon Sep 17 00:00:00 2001
+From: Joey Riches <josephriches@gmail.com>
+Date: Wed, 8 Mar 2017 16:04:15 +0000
+Subject: [PATCH 1/1] only-build-x64-linux
+
+---
+ bin/package.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/bin/package.js b/bin/package.js
+index 9f59a19..cd28940 100755
+--- a/bin/package.js
++++ b/bin/package.js
+@@ -175,7 +175,7 @@ const linux = {
+   platform: 'linux',
+ 
+   // Build ia32 and x64 binaries.
+-  arch: ['ia32', 'x64']
++  arch: 'x64',
+ 
+   // Note: Application icon for Linux is specified via the BrowserWindow `icon` option.
+ }
+-- 
+2.12.0
+

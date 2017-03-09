@@ -1,0 +1,28 @@
+name       : webtorrent-desktop
+version    : 0.18.0
+release    : 1
+source     :
+    - https://github.com/feross/webtorrent-desktop/archive/v0.18.0.tar.gz : 25b92aab9cc6d076715a12bdaeae950f6885da19d87948a6acf007ba246b9494
+license    : MIT
+component  : multimedia.video
+networking : yes
+summary    : Cross platform streaming torrent app
+description: |
+    Cross platform streaming torrent app
+builddeps  : 
+    - nodejs-devel
+setup      : |
+    %patch -p1 < $pkgfiles/0001-only-build-x64-linux.patch
+build      : |
+    npm install
+    npm run package -- linux --package=zip
+install    : |
+    install -dm755 $installdir/usr/share
+    install -dm755 $installdir/usr/bin
+
+    cp -a $workdir/electron-packager/linux-x64/WebTorrent-linux-x64 $installdir/usr/share/$name
+    ln -s $installdir/usr/share/$name/WebTorrent $installdir/usr/bin/$name
+
+    install -Dm644 $workdir/$name.desktop $installdir/usr/share/applications/$name.desktop
+    install -Dm644 $workdir/$name-$version/static/WebTorrent.png $installdir/usr/share/icons/hicolor/256x256/apps/$name.png
+
