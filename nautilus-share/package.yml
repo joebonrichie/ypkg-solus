@@ -1,0 +1,20 @@
+name       : nautilus-share
+version    : 0.7.3
+release    : 1
+source     :
+    - https://git.gnome.org/browse/nautilus-share/snapshot/nautilus-share-0.7.3.tar.xz : 21c6532c90e97f7fe8c28997d9a24283189ec50cb04eeebbe309eeb0724e136d
+license    : GPL-2.0
+component  : desktop.gnome
+summary    : Nautilus extension to share folder using Samba
+description: |
+    Nautilus extension to share folder using Samba
+builddeps  :
+    - pkgconfig(smbclient)
+    - nautilus-extension-devel
+    - intltool
+setup      : |
+    %autogen
+build      : |
+    %make
+install    : |
+    %make_install
