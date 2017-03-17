@@ -21,3 +21,4 @@ build      : |
     %make
 install    : |
     %make_install
+    install -Dm00755 $installdir/usr/lib/security/pam_yubico.so $installdir/lib64/security/pam_yubico.so

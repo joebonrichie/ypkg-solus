@@ -21,6 +21,7 @@ PAM is used by GNU/Linux, Solaris and Mac OS X for user authentication, and by o
 </Description>
         <PartOf>system.util</PartOf>
         <Files>
+            <Path fileType="data">/lib64/security/pam_yubico.so</Path>
             <Path fileType="executable">/usr/bin</Path>
             <Path fileType="library">/usr/lib/security/pam_yubico.so</Path>
             <Path fileType="man">/usr/share/man</Path>
@@ -28,7 +29,7 @@ PAM is used by GNU/Linux, Solaris and Mac OS X for user authentication, and by o
     </Package>
     <History>
         <Update release="1">
-            <Date>2017-02-26</Date>
+            <Date>2017-03-17</Date>
             <Version>2.24</Version>
             <Comment>Packaging update</Comment>
             <Name>Joey Riches</Name>
