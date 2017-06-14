@@ -1,34 +1,37 @@
 name       : streamlink-twitch-gui
-version    : 1.1.1
+version    : 1.3.1
 release    : 1
 source     :
-    - git|https://github.com/streamlink/streamlink-twitch-gui.git : e5f98d3c4ffbad8cc75bf8ddfed67affd1b1aa5b
+    - https://github.com/streamlink/streamlink-twitch-gui/releases/download/v1.3.1/streamlink-twitch-gui-v1.3.1-linux64.tar.gz : 06bf0e4516f189fa686b935a9455b8129d3113115c531f0bfcb9b9927422b5a6
 license    : MIT
 component  : network.web
 summary    : A multi platform Twitch.tv browser for Streamlink
 description: |
     A multi platform Twitch.tv browser for Streamlink
-networking : yes
+strip      : no
 builddeps  :
-    - pkgconfig(x11)
-    - pkgconfig(gtk+-2.0)
+    - pkgconfig(alsa)
     - pkgconfig(gconf-2.0)
-    - nodejs
-    - git
-    #- xdg-utils
-    #- libxtst
-    #- libnss
-build      : |
-    # Since grunt-cli and bower will not be installed globally (-g) export them to path
-    export PATH=$workdir/node_modules/.bin:$PATH
-    npm install grunt-cli bower
-    npm install
-    # Normally bower install gets triggered by npm install but we need to pass --allow-root to it
-    bower install --allow-root
-    grunt release
-    # nwjs cannot be run, exit code 1, helpful.
+    - pkgconfig(gdk-pixbuf-2.0)
+    - pkgconfig(gtk+-x11-2.0)
+    - pkgconfig(pangocairo)
+    - pkgconfig(xcursor)
+    - pkgconfig(xext)
+    - pkgconfig(xcomposite)
+    - pkgconfig(xi)
+    - pkgconfig(xfixes)
+    - pkgconfig(xrandr)
+    - pkgconfig(xscrnsaver)
+    - pkgconfig(x11)
 install    : |
-    # cp -R $workdir/build/releases $installdir/opt/
-    # add-menu-item.sh
-    # disable update checking
-    %make_install
+    install -d $installdir/usr/share/streamlink-twitch-gui
+    install -d $installdir/usr/bin
+
+    cp -R * $installdir/usr/share/streamlink-twitch-gui
+
+#    install -Dm755 start.sh $installdir/usr/bin/streamlink-twitch-gui
+
+    install -Dm0064 icons/icon-256.png $installdir/usr/share/pixmaps/streamlink-twitch-gui.png
+    install -Dm0064 $pkgfiles/streamlink-twitch-gui.desktop $installdir/usr/share/applications/streamlink-twitch-gui.desktop
+
+

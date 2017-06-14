@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Streamlink Twitch GUI
+GenericName=Twitch.tv browser for streamlink
+Comment=Browse Twitch.tv and watch streams in your videoplayer of choice
+Keywords=streamlink;twitch;
+Categories=AudioVideo;
+Exec=/usr/share/streamlink-twitch-gui/start.sh
+Icon=streamlink-twitch-gui
