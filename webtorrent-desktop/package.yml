@@ -2,14 +2,28 @@ name       : webtorrent-desktop
 version    : 0.18.0
 release    : 1
 source     :
-    - https://github.com/feross/webtorrent-desktop/archive/v0.18.0.tar.gz : 25b92aab9cc6d076715a12bdaeae950f6885da19d87948a6acf007ba246b9494
+    - https://github.com/webtorrent/webtorrent-desktop/archive/v0.18.0.tar.gz : 25b92aab9cc6d076715a12bdaeae950f6885da19d87948a6acf007ba246b9494
 license    : MIT
 component  : multimedia.video
 networking : yes
+strip      : no
 summary    : Cross platform streaming torrent app
 description: |
     Cross platform streaming torrent app
-builddeps  : 
+builddeps  :
+    - pkgconfig(alsa)
+    - pkgconfig(gconf-2.0)
+    - pkgconfig(gdk-pixbuf-2.0)
+    - pkgconfig(gtk+-x11-2.0)
+    - pkgconfig(pangocairo)
+    - pkgconfig(xcursor)
+    - pkgconfig(xext)
+    - pkgconfig(xcomposite)
+    - pkgconfig(xi)
+    - pkgconfig(xfixes)
+    - pkgconfig(xrandr)
+    - pkgconfig(xscrnsaver)
+    - pkgconfig(x11)
     - nodejs
 setup      : |
     %patch -p1 < $pkgfiles/0001-only-build-x64-linux.patch
