@@ -1,0 +1,19 @@
+name       : cmrt
+version    : 1.0.6
+release    : 1
+source     :
+    - https://github.com/01org/cmrt/archive/1.0.6.tar.gz : ca22e905a2717fc740e703e65a0061a0e11f4ea513ba970bbc10b3bd6d28e6e0
+license    : MIT
+component  : system.utils
+summary    : C for Media Runtime
+description: |
+    Media GPU kernel manager for Intel G45 & HD Graphics family
+builddeps  :
+    - pkgconfig(libdrm)
+    - pkgconfig(libva)
+setup      : |
+    %autogen
+build      : |
+    %make
+install    : |
+    %make_install
