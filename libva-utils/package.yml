@@ -1,0 +1,25 @@
+name       : libva-utils
+version    : 1.8.2
+release    : 1
+source     :
+    - https://github.com/01org/libva-utils/archive/1.8.2.tar.gz : ccae885d9f3b4511081d287816c56bd7dda98e5947e6254ebe60d08e86c6ba4a
+license    : MIT
+component  : system.utils
+summary    : Libva-utils is a collection of tests for VA-API (VIdeo Acceleration API) 
+description: |
+    Libva-utils is a collection of tests for VA-API (VIdeo Acceleration API) 
+builddeps  :
+    - pkgconfig(libdrm)
+    - pkgconfig(libva)
+    - pkgconfig(wayland-client)
+    - pkgconfig(x11)
+    - pkgconfig(xext)
+    - pkgconfig(xfixes)
+rundeps    :
+    - libva
+setup      : |
+    %autogen --disable-static
+build      : |
+    %make
+install    : |
+    %make_install
