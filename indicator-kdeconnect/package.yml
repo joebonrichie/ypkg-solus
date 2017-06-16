@@ -1,0 +1,23 @@
+name       : indicator-kdeconnect
+version    : 0.9.0
+release    : 1
+source     :
+    - https://github.com/Bajoja/indicator-kdeconnect/archive/0.9.0.tar.gz : 81bfc5c2e90961dc07355c425b5523be5f766622b76934809f521dc7fdd5e3a5
+license    : LGPL-2.1
+component  : network.remote
+summary    : AppIndicator for KDE Connect
+description: |
+    This Indicator is written to make KDE Connect usable in desktops without KDE Plasma, such as Ubuntu Unity and Pantheon. It started as an AppIndicator, but you can send files and URLs easily through KDE Connect with kdeconnect-send.
+builddeps  :
+    - pkgconfig(appindicator-0.1)
+    - vala
+rundeps    :
+    - kdeconnect
+    - python-gobject
+    - python-requests-oauthlib
+setup      : |
+    %cmake
+build      : |
+    %make
+install    : |
+    %make_install

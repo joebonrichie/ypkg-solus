@@ -1,0 +1,45 @@
+<PISI>
+    <Source>
+        <Name>indicator-kdeconnect</Name>
+        <Packager>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Packager>
+        <License>LGPL-2.1</License>
+        <PartOf>network.remote</PartOf>
+        <Summary xml:lang="en">AppIndicator for KDE Connect</Summary>
+        <Description xml:lang="en">This Indicator is written to make KDE Connect usable in desktops without KDE Plasma, such as Ubuntu Unity and Pantheon. It started as an AppIndicator, but you can send files and URLs easily through KDE Connect with kdeconnect-send.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>indicator-kdeconnect</Name>
+        <Summary xml:lang="en">AppIndicator for KDE Connect</Summary>
+        <Description xml:lang="en">This Indicator is written to make KDE Connect usable in desktops without KDE Plasma, such as Ubuntu Unity and Pantheon. It started as an AppIndicator, but you can send files and URLs easily through KDE Connect with kdeconnect-send.
+</Description>
+        <PartOf>network.remote</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="data">/usr/share/Thunar/sendto/kdeconnect-send-thunar.desktop</Path>
+            <Path fileType="data">/usr/share/applications/indicator-kdeconnect-settings.desktop</Path>
+            <Path fileType="data">/usr/share/applications/indicator-kdeconnect.desktop</Path>
+            <Path fileType="data">/usr/share/caja-python/extensions/kdeconnect-send-caja.py</Path>
+            <Path fileType="data">/usr/share/contractor/kdeconnect.contract</Path>
+            <Path fileType="data">/usr/share/glib-2.0/schemas/com.bajoja.indicator-kdeconnect.gschema.xml</Path>
+            <Path fileType="data">/usr/share/indicator-kdeconnect</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+            <Path fileType="data">/usr/share/metainfo/com.bajoja.indicator-kdeconnect.appdata.xml</Path>
+            <Path fileType="data">/usr/share/nautilus-python/extensions/kdeconnect-send-nautilus.py</Path>
+            <Path fileType="data">/usr/share/nemo-python/extensions/kdeconnect-send-nemo.py</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2017-06-16</Date>
+            <Version>0.9.0</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
