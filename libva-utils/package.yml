@@ -15,8 +15,6 @@ builddeps  :
     - pkgconfig(x11)
     - pkgconfig(xext)
     - pkgconfig(xfixes)
-rundeps    :
-    - libva
 setup      : |
     %autogen --disable-static
 build      : |
