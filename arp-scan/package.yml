@@ -2,7 +2,7 @@ name       : arp-scan
 version    : 1.9
 release    : 1
 source     :
-    - https://github.com/royhills/arp-scan/releases/download/1.9/arp-scan-1.9.tar.gz : ce908ac71c48e85dddf6dd4fe5151d13c7528b1f49717a98b2a2535bd797d892
+    - git|https://github.com/royhills/arp-scan : af4a1a26b9a1f39b2c447a5a9b96ab37bae52f32
 license    : GPL-3.0
 component  : system.util
 summary    : ARP scanner for local networks
@@ -14,9 +14,7 @@ rundeps    :
     - libpcap
     - libwww-perl
 setup      : |
-    autoreconf --install
-    %configure  --prefix=/usr \
-                --mandir=/usr/share/man
+    %reconfigure
 build      : |
     %make
 check      : |
